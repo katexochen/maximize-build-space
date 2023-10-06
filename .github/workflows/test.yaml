@@ -28,19 +28,14 @@ jobs:
           - ubuntu-22.04
         remove-android:
           - 'true'
-          - 'false'
         remove-dotnet:
           - 'true'
-          - 'false'
         remove-haskell:
           - 'true'
-          - 'false'
         remove-codeql:
           - 'true'
-          - 'false'
         remove-docker-images:
           - 'true'
-          - 'false'
 
     steps:
       - name: Record start time
