@@ -171,9 +171,9 @@ runs:
           # create and mount build volume
           sudo lvcreate -l 100%FREE -n buildlv "${VG_NAME}"
           if [[ ${{ inputs.overprovision-lvm }} == 'true' ]]; then
-            sudo mkfs.btrfs -m0 "/dev/mapper/${VG_NAME}-buildlv"
+            sudo mkfs.btrfs "/dev/mapper/${VG_NAME}-buildlv"
           else
-            sudo mkfs.btrfs --nodiscard -m0 "/dev/mapper/${VG_NAME}-buildlv"
+            sudo mkfs.btrfs --nodiscard "/dev/mapper/${VG_NAME}-buildlv"
           fi
           if [[ ! -d "${BUILD_MOUNT_PATH}" ]]; then
             sudo mkdir -p "${BUILD_MOUNT_PATH}"
